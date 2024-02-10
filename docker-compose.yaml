@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: concurrent_transactions_db
+      POSTGRES_USER: api_user
+      POSTGRES_PASSWORD: api_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./docker/sql/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+
+volumes:
+  postgres_data:
