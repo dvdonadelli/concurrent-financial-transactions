@@ -1,7 +1,7 @@
 CREATE TABLE clients
 (
     id      SERIAL PRIMARY KEY,
-    "limit" INTEGER NOT NULL,
+    limit   INTEGER NOT NULL,
     balance INTEGER NOT NULL DEFAULT 0
 );
 
